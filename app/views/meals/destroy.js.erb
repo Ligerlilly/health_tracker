@@ -1,0 +1,5 @@
+$('#meal-<%= @meal_id %>').remove();
+var cals = parseInt($('#t_cals').text());
+cals -= <%= @meal_cals %>;
+
+$('#t_cals').text(cals);

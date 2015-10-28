@@ -1,0 +1,11 @@
+<tr id="meal-<%= meal.id %>">
+  <td>
+    <%= meal.food.name %>
+  </td>
+  <td>
+    <%= meal.food.calories %>
+  </td>
+  <td>
+    <%= link_to "Delete", meal_path(meal), remote: true, data: {method: "delete", confirm: "You sure dawg?"} %>
+  </td>
+</tr>

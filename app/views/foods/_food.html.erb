@@ -1,0 +1,15 @@
+<tr>
+  <td>
+    <%= food.name %>
+  </td>
+  <td>
+    <%= food.calories %>
+  </td>
+  <td>
+    <%= form_for @meal, remote: true do |f| %>
+      <%= f.hidden_field :food_id, value: food.id %>
+      <%= f.hidden_field :user_id, value: current_user.id %>
+      <%= f.submit 'New Meal', class: 'btn btn-success' %>
+    <% end %>
+  </td>
+</tr>
