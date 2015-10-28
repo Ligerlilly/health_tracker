@@ -17,7 +17,7 @@
 //= require bootstrap-sprockets
 $(function() {
 
-  $("#products_search input").keyup(function() {
+  $("#foods_search input").keyup(function() {
     $.get($("#foods_search").attr("action"), $("#foods_search").serialize(), null, "script");
     return false;
   });
