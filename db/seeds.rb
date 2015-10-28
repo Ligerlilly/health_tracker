@@ -1,7 +1,23 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+# seeds = file.open("./foods.txt", "r")
+# arr = []
+# f.each_line do |line|
+
+foods = [
+  ["banana", 105],
+  ["chicken", 275],
+  ["soda", 140],
+  ["almonds", 105],
+  ["Tea", 0],
+  ["potato chips", 200],
+  ["rice", 175]
+]
+
+
+foods.each do |a, b|
+
+  Food.create!(
+    name: a,
+    calories: b
+  )
+
+end
