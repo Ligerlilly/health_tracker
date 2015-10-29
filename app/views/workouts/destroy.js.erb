@@ -1,5 +1,8 @@
 $('#workout-<%= @workout_id %>').remove();
 var cals = parseInt($('#b_cals').text());
 cals -= <%= @workout_cals %>;
-
 $('#b_cals').text(cals);
+
+var day_cals = parseInt($('#day_cals').text());
+day_cals -= <%= @workout_cals %>;
+$('#day_cals').text(day_cals);

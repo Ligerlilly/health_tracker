@@ -1,5 +1,5 @@
 
-<h2>total calories burned</h2>
+<h2>Total Calories Burned</h2>
 <h4 id= 'b_cals' ><%= current_user.total_cals_burned()  %></h4>
 
 <%= form_tag exercises_path, method: 'get', id: "exercises_search", remote: true do %>
@@ -19,7 +19,7 @@
       cals per hour
     </th>
     <th>
-      duration (mins)
+      duration (hrs)
     </th>
     <th>
 
@@ -47,11 +47,11 @@
     </th>
   </tr>
   <tbody id='exercises-list'>
-
-
-  <% current_user.workouts.each do |workout| %>
+  <% @workouts.each do |workout| %>
     <%= render "workouts/workout", workout: workout %>
 
   <% end %>
+  <%= will_paginate @workouts %>
+
 </tbody>
 </table>

@@ -5,6 +5,7 @@ class WorkoutsController < ApplicationController
 
   def create
     @workout = Workout.new(workout_params)
+    @workout.duration ||= 0
     @workout.day = today
     if @workout.save
       respond_to do |format|
@@ -19,10 +20,11 @@ class WorkoutsController < ApplicationController
     @workout_id = params[:id]
     @workout = Workout.find(@workout_id)
     @workout_cals = @workout.cals_burned
-    @workout.destroy
+
     respond_to do |format|
       format.js
     end
+    @workout.destroy
   end
 
   private

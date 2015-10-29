@@ -3,3 +3,7 @@ var cals = parseInt($('#t_cals').text());
 cals -= <%= @meal_cals %>;
 
 $('#t_cals').text(cals);
+
+var day_cals = parseInt($('#day_cals').text());
+day_cals -= <%= @meal_cals %>;
+$('#day_cals').text(day_cals);

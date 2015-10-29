@@ -1,1 +1,5 @@
-$('#foods').html('<%= j render @foods %>');
+<% if @foods == [] %>
+  $('#foods').html("<%= j render 'new_food' %>");
+<% else %>
+  $('#foods').html('<%= j render @foods %>');
+<% end %>

@@ -1,1 +1,5 @@
-$('#exercises').html('<%= j render @exercises %>');
+<% if @exercises == [] %>
+  $('#exercises').html("<%= j render 'new_exercise' %>");
+<% else %>
+  $('#exercises').html('<%= j render @exercises %>');
+<% end %>

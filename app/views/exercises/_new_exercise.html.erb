@@ -1,0 +1,13 @@
+<tr>
+<td>
+<%= form_for Exercise.new, remote: true do |f| %>
+     <%= f.label :name, 'Add an Exercise' %>
+     <div class="form-group">
+       <%= f.text_field :name, value: params[:e_search] %>
+       <%= f.text_field :cals_per_hour, placeholder: 'Enter calories burned per hour' %>
+
+     </div>
+  <%= f.submit %>
+<% end %>
+</td>
+</tr>

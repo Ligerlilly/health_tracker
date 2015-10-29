@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
   def total_cals_burned
     t_burned = 0
     self.workouts.each do |workout|
-      t_burned += workout.exercise.cals_per_hour * workout.duration
+      t_burned += workout.cals_burned
     end
     t_burned
   end
