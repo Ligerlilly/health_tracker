@@ -1,1 +1,57 @@
 
+<h2>total calories burned</h2>
+<h4 id= 'b_cals' ><%= current_user.total_cals_burned()  %></h4>
+
+<%= form_tag exercises_path, method: 'get', id: "exercises_search", remote: true do %>
+  <%= label_tag :search %>
+  <%= text_field_tag :e_search, params[:e_search] %>
+
+
+<% end %>
+<br>
+<br>
+<table class='table table-hover '>
+  <tr>
+    <th>
+      exercise
+    </th>
+    <th>
+      cals per hour
+    </th>
+    <th>
+      duration (mins)
+    </th>
+    <th>
+
+    </th>
+  </tr>
+  <tbody id='exercises'>
+
+  </tbody>
+</table>
+<h3>Workouts Completed</h3>
+
+<table class="table" >
+  <tr>
+    <th>
+      exercise
+    </th>
+    <th>
+      duration
+    </th>
+    <th>
+      cals
+    </th>
+    <th>
+
+    </th>
+  </tr>
+  <tbody id='exercises-list'>
+
+
+  <% current_user.workouts.each do |workout| %>
+    <%= render "workouts/workout", workout: workout %>
+
+  <% end %>
+</tbody>
+</table>

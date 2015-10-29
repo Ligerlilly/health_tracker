@@ -1,0 +1,3 @@
+$('#exercises-list').prepend('<%= j render @workout %>');
+$('#b_cals').text(<%= @workout.user.total_cals_burned %>);
+$('#day_cals').text(<%= @workout.user.day_cals %>)

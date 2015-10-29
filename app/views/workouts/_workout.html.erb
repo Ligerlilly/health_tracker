@@ -1,0 +1,14 @@
+<tr id="workout-<%= workout.id %>">
+  <td>
+    <%= workout.exercise.name %>
+  </td>
+  <td>
+    <%= workout.duration %>
+  </td>
+  <td>
+    <%= workout.cals_burned %>
+  </td>
+  <td>
+    <%= link_to "Delete", workout_path(workout), remote: true, data: {method: "delete", confirm: "You sure dawg?"} %>
+  </td>
+</tr>

@@ -1,0 +1,5 @@
+$('#workout-<%= @workout_id %>').remove();
+var cals = parseInt($('#b_cals').text());
+cals -= <%= @workout_cals %>;
+
+$('#b_cals').text(cals);

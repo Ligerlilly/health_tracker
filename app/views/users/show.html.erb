@@ -1,13 +1,15 @@
 <h1>Hi, <%= @user.name %></h1>
 <br>
 <h2>What have you been up to today?</h2>
-
-
-<%= render "exercises/exercises_panel" %>
+<h3>Your total daily calories</h3>
+<h3 id='day_cals'><%= @user.day_cals %></h3>
 <div class="row">
-  <div class="foods col-md-6">
 
-  
-  <%= render "foods/foods_panel" %>
+  <div class="foods col-md-6">
+    <%= render "foods/foods_panel" %>
+  </div>
+
+  <div class="exercises col-md-6">
+    <%= render "exercises/exercises_panel" %>
   </div>
 </div>

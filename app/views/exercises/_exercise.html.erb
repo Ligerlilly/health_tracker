@@ -1,0 +1,19 @@
+
+<tr>
+  <td>
+    <%= exercise.name %>
+  </td>
+  <td>
+    <%= exercise.cals_per_hour %>
+  </td>
+  <td>
+    <%= form_for @workout, remote: true do |f| %>
+      <%= f.hidden_field :exercise_id, value: exercise.id %>
+      <%= f.hidden_field :user_id, value: current_user.id %>
+      <%= f.text_field :duration %>
+      <%= f.submit 'New Workout', class: 'btn btn-success' %>
+    <% end %>
+  </td>
+  <td>
+  </td>
+</tr>

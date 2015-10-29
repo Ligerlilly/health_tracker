@@ -21,4 +21,10 @@ $(function() {
     $.get($("#foods_search").attr("action"), $("#foods_search").serialize(), null, "script");
     return false;
   });
+
+
+  $("#exercises_search input").keyup(function() {
+    $.get($("#exercises_search").attr("action"), $("#exercises_search").serialize(), null, "script");
+    return false;
+  });
 });

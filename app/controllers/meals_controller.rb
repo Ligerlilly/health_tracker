@@ -5,6 +5,7 @@ class MealsController < ApplicationController
 
   def create
     @meal = Meal.new(meal_params)
+    @meal.day = today
     if @meal.save
       respond_to do |format|
         format.js

@@ -1,5 +1,3 @@
 $('#foods-list').prepend('<%= j render @meal %>');
-var cals = parseInt($('#t_cals').text());
-cals += <%= @meal.food.calories %>;
-
-$('#t_cals').text(cals);
+$('#t_cals').text(<%= @meal.user.total_cals %>);
+$('#day_cals').text(<%= @meal.user.day_cals %>)

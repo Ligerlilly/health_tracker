@@ -20,4 +20,8 @@ class User < ActiveRecord::Base
     end
     t_burned
   end
+
+  def day_cals
+    total_cals - total_cals_burned
+  end
 end
